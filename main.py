@@ -76,17 +76,17 @@ class MainWindow(QMainWindow, form_class):
         if columns_name is not None:
             return columns_name
 
-    def splitOperations(self, where_statement):
-        where_statement = where_statement.replace(" ", "")
-        or_operations = re.split('OR', where_statement)
-        or_counter = len(or_operations)
-        for op in or_operations:
-            and_operations = re.split('AND', op)
-            print(and_operations)
-        # out = list()
-        # for operation in operations:
-        #     out.append(re.findall(r"(?:\w+|=|>|<|<>\w+)+", operation))
-        # return out
+    # def splitOperations(self, where_statement):
+    #     where_statement = where_statement.replace(" ", "")
+    #     or_operations = re.split('OR', where_statement)
+    #     or_counter = len(or_operations)
+    #     for op in or_operations:
+    #         and_operations = re.split('AND', op)
+    #         print(and_operations)
+    #     # out = list()
+    #     # for operation in operations:
+    #     #     out.append(re.findall(r"(?:\w+|=|>|<|<>\w+)+", operation))
+    #     # return out
 
     def isColumn(self, name):
         return name in [cols for cols in list(globals()['table_data'].columns.values)]
